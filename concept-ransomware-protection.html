@@ -577,7 +577,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-04 16:50:17 +0000">04/04/2022</time>
+    <time datetime="2022-04-29 20:19:26 +0000">04/29/2022</time>
     
   
 
@@ -598,7 +598,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Ransomware attacks can cost a business time, resources, and reputation. The Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.</p>
+<p>Ransomware attacks can cost a business time, resources, and reputation. The Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your organization is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://cloud.netapp.com/cyberstorage" target="_blank" rel="noopener">Learn about the use cases for Ransomware Protection</a>.</p>
@@ -626,10 +626,19 @@ The Ransomware Protection service is currently a Beta offering.
 <div class="ulist">
 <ul>
 <li>
+<p>Volumes in your working environments aren&#8217;t being protected by making periodic Snapshot copies.</p>
+</li>
+<li>
 <p>Volumes in your working environments aren&#8217;t being protected by creating backups to the cloud using <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html" target="_blank" rel="noopener">Cloud Backup</a>.</p>
 </li>
 <li>
 <p>Data in your working environments and data sources aren&#8217;t being scanned using <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_blank" rel="noopener">Cloud Data Sense</a> to identify compliance and privacy concerns, and find optimization opportunities.</p>
+<div class="paragraph">
+<p>This capability is also important from a ransomware protection perspective because it allows you to better understand where your important (sensitive, business critical) data is located so you can make sure you&#8217;re focusing your protections there.</p>
+</div>
+</li>
+<li>
+<p>Your most important categories of data aren&#8217;t being backed up in case you need to recover because of a ransomware attack.</p>
 </li>
 <li>
 <p>An abnormal increase in the percentage of encrypted files in a working environment or data source has occurred.</p>
@@ -642,6 +651,15 @@ The Ransomware Protection service is currently a Beta offering.
 </li>
 <li>
 <p>Users have been added to your Active Directory Domain Administrator Groups.</p>
+</li>
+<li>
+<p>The ONTAP software version on your clusters is old and should be updated to provide the best protection and security features.</p>
+</li>
+<li>
+<p>On-box anti-ransomware features are not enabled on your ONTAP systems.</p>
+<div class="paragraph">
+<p>The ONTAP anti-ransomware features proactively detect and warn about abnormal activity that might indicate a ransomware attack.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -693,13 +711,16 @@ The Ransomware Protection service is currently a Beta offering.
 <p>Object storage (that uses S3 protocol)</p>
 </li>
 <li>
-<p>Databases</p>
+<p>Databases (Amazon RDS, MongoDB, MySQL, Oracle, PostgreSQL, SAP HANA, SQL Server)</p>
 </li>
 <li>
 <p>OneDrive accounts</p>
 </li>
 <li>
 <p>SharePoint accounts</p>
+</li>
+<li>
+<p>Google Drive accounts</p>
 </li>
 </ul>
 </div>
@@ -717,7 +738,7 @@ The Ransomware Protection service is currently a Beta offering.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ransomware Protection gathers information from Cloud Data Sense, Cloud Backup, and from other Cloud Manager resources, to populate the Ransomware Protection Dashboard.</p>
+<p>Ransomware Protection gathers information from your storage systems, Cloud Data Sense, Cloud Backup, and from other Cloud Manager resources, to populate the Ransomware Protection Dashboard.</p>
 </li>
 <li>
 <p>You use the Ransomware Protection dashboard to get an overview of how well protected your systems are.</p>

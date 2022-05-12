@@ -577,7 +577,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-04 16:50:17 +0000">04/04/2022</time>
+    <time datetime="2022-05-03 18:53:48 +0000">05/03/2022</time>
     
   
 
@@ -669,6 +669,21 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">One or more repositories (volumes, buckets, etc.) in your data sources are not being scanned by Data Sense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Some data in your data sources isn&#8217;t being scanned using <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_blank" rel="noopener">Cloud Data Sense</a> to identify compliance and privacy concerns and find optimization opportunities.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click the link to launch Data Sense and enable scanning and mapping for the items that are not being scanned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On-box anti-ransomware is not active for all volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Some volumes in the on-prem ONTAP system don&#8217;t have the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html" target="_blank" rel="noopener">NetApp anti-ransomware feature</a> enabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the link and you are redirected to the <a href="#status-of-ontap-systems-hardening">Harden your ONTAP environment panel</a> and to the working environment with the issue. There you can investigate how best to fix the issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP version is not updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of ONTAP software installed on your clusters are not in accordance with the recommendations from the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the link and you are redirected to the <a href="#status-of-ontap-systems-hardening">Harden your ONTAP environment panel</a> and to the working environment with the issue. There you can investigate how best to fix the issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshots not configured for all volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Some volumes in the working environment aren&#8217;t being protected by creating volume snapshots.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the link and you are redirected to the <a href="#status-of-ontap-systems-hardening">Harden your ONTAP environment panel</a> and to the working environment with the issue. There you can investigate how best to fix the issue.</p></td>
 </tr>
 </tbody>
 </table>
@@ -766,6 +781,60 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="status-of-ontap-systems-hardening">Status of ONTAP systems hardening</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>Harden your ONTAP environment</em> panel provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
+</div>
+<div class="paragraph">
+<p>You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion.</p>
+</div>
+<div class="paragraph">
+<p>This panel supports on-prem ONTAP, Cloud Volumes ONTAP, and Amazon FSx for NetApp ONTAP systems at this time.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_ransomware_harden_ontap.png" alt="A screenshot of the status for ONTAP hardening on the Ransomware Protection dashboard."></span></p>
+</div>
+<div class="paragraph">
+<p>The settings that are being tracked include:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Hardening Objective</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Remediation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP Anti-ransomware</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The percentage of volumes that have on-box anti-ransomware activated. Valid for on-prem ONTAP systems only.<br>
+A green status icon indicates &gt; 85% of volumes are enabled. Yellow indicates 40-85% are enabled. Red indicates &lt; 40% are enabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure" target="_blank" rel="noopener">See how to enable anti-ransomware on your volumes</a> using System Manager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of ONTAP software installed on your clusters.<br>
+A green status icon indicates that the version is current. A yellow icon indicates that the cluster is behind by 1 or 2 patch versions or 1 minor version for on-prem systems, or behind by 1 major version for Cloud Volumes ONTAP. A red icon indicates that the cluster is behind by 3 patch versions, or 2 minor versions, or 1 major version for on-prem systems, or behind by 2 major versions for Cloud Volumes ONTAP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.netapp.com/us-en/ontap/setup-upgrade/index.html" target="_blank" rel="noopener">See the best way to upgrade your on-prem clusters</a> or <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task_updating_ontap_cloud.html" target="_blank" rel="noopener">your Cloud Volumes ONTAP systems</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshots</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is the snapshot capability activated on data volumes, and what percentage of volumes have Snapshot copies.<br>
+A green status icon indicates &gt; 85% of volumes have snapshots enabled. Yellow indicates 40-85% are enabled. Red indicates &lt; 40% are enabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html" target="_blank" rel="noopener">See how to enable volume snapshots on your on-prem clusters</a> or <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task_managing_storage.html#managing-existing-volumes" target="_blank" rel="noopener">on your Cloud Volumes ONTAP systems</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="status-of-permissions-on-your-critical-business-data">Status of permissions on your critical business data</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -775,10 +844,10 @@
 <p><span class="image"><img src="./media/screenshot_ransomware_critical_permissions.png" alt="A screenshot of the permissions status for the data you are managing on the Ransomware Protection dashboard."></span></p>
 </div>
 <div class="paragraph">
-<p>Initially this panel has no data because the data gets populated only after you select the Data Sense <em>Policies</em> that you have created to view your most critical business data. See how to <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-org-private-data.html#creating-custom-policies" target="_blank" rel="noopener">create your policies using Data Sense</a>.</p>
+<p>Initially this panel shows data based on default policies that we have selected. But you can select the 2 most important Data Sense <em>Policies</em> that you have created to view your most critical business data. See how to <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-org-private-data.html#creating-custom-policies" target="_blank" rel="noopener">create your policies using Data Sense</a>.</p>
 </div>
 <div class="paragraph">
-<p>After you have added up to 2 policies to this panel, the graph shows a permission analysis of all the data that meets the criteria from your policy. It lists the number of items that are:</p>
+<p>The graph shows permission analysis of all the data that meets the criteria from your policies. It lists the number of items that are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -798,6 +867,29 @@
 </div>
 <div class="paragraph">
 <p>Hover over each bar in the charts to view the number of results in each category. Click a bar and the Data Sense Investigation page is displayed so you can investigate further about which items have open permissions and whether you should make any adjustments to file permissions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backup-status-of-your-critical-business-data">Backup status of your critical business data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>Backup Status</em> panel shows how different categories of data are being protected using Cloud Backup. This identifies how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in a working environment are backed up.</p>
+</div>
+<div class="paragraph">
+<p>Only on-prem ONTAP and Cloud Volumes ONTAP working environments that are already being backed up using Cloud Backup <em>and</em> scanned using Cloud Data Sense will appear in this panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_ransomware_backups.png" alt="A screenshot of the backup status for the data you are managing on the Ransomware Protection dashboard."></span></p>
+</div>
+<div class="paragraph">
+<p>Initially this panel shows data based on default categories that we have selected. But you can select the categories of data that you want to track; for example, codes files, contracts, etc. See the full list of <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/reference-private-data-categories.html#types-of-categories">categories</a> that are available from Cloud Data Sense for your working environments. Then select up to 4 categories.</p>
+</div>
+<div class="paragraph">
+<p>After the data is populated, hover over each square in the charts to view the number of files that are backed up out of all files in the same category in the working environment. A green square means 85% or greater of your files are being backed up. A yellow square means between 40% and 85% of your files are being backed up. And a red square means 40% or fewer files are being backed up.</p>
+</div>
+<div class="paragraph">
+<p>You can click the Cloud Backup button at the end of the row to go to the Cloud Backup interface to enable backup on more volumes in each working environment.</p>
 </div>
 </div>
 </div>
