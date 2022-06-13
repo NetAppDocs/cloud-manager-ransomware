@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-ransomware/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/concept-ransomware-protection.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/concept-ransomware-protection.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/concept-ransomware-protection.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/concept-ransomware-protection.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/concept-ransomware-protection.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/concept-ransomware-protection.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/concept-ransomware-protection.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/concept-ransomware-protection.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/concept-ransomware-protection.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/concept-ransomware-protection.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -360,8 +352,6 @@
         
         <a target="_blank" href="/us-en/cloud-manager-ransomware/pdfs/fullsite-sidebar/Ransomware_Protection_documentation.pdf" >
           <img src="/us-en/cloud-manager-ransomware/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
-
-
 
 
 
@@ -496,10 +486,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-ransomware/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
         Ransomware Protection docs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/whats-new.html">
         Release notes
@@ -577,7 +567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-29 20:19:26 +0000">04/29/2022</time>
+    <time datetime="2022-05-25 15:07:35 +0000">05/25/2022</time>
     
   
 
@@ -621,7 +611,7 @@ The Ransomware Protection service is currently a Beta offering.
 <h2 id="features">Features</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ransomware Protection currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added in the future. Current features identify when:</p>
+<p>Ransomware Protection provides a single point of visibility and control to manage and to refine data security across various working environments and infrastructure layers to better respond to threats as they occur. It currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added in the future. Current features identify when:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -654,6 +644,12 @@ The Ransomware Protection service is currently a Beta offering.
 </li>
 <li>
 <p>The ONTAP software version on your clusters is old and should be updated to provide the best protection and security features.</p>
+</li>
+<li>
+<p>NAS file system auditing is not enabled on your ONTAP systems.</p>
+<div class="paragraph">
+<p>Enabling CIFS auditing generates auditing events for your system admins that track information such as folder permission changes, failed attempts to read or write files, and when files have been created, modified, or deleted.</p>
+</div>
 </li>
 <li>
 <p>On-box anti-ransomware features are not enabled on your ONTAP systems.</p>
@@ -904,4 +900,5 @@ The Ransomware Protection service is currently a Beta offering.
     </script>
     <script src='/us-en/cloud-manager-ransomware/js/www-ntap.js'></script>
     <script src='/us-en/cloud-manager-ransomware/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-ransomware/js/sidebar.js'></script>
   </body></html>

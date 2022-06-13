@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-ransomware/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/task-analyze-ransomware-data.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/task-analyze-ransomware-data.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/task-analyze-ransomware-data.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/task-analyze-ransomware-data.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/task-analyze-ransomware-data.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/task-analyze-ransomware-data.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/task-analyze-ransomware-data.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/task-analyze-ransomware-data.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -360,8 +352,6 @@
         
         <a target="_blank" href="/us-en/cloud-manager-ransomware/pdfs/fullsite-sidebar/Ransomware_Protection_documentation.pdf" >
           <img src="/us-en/cloud-manager-ransomware/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
-
-
 
 
 
@@ -496,10 +486,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-ransomware/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
         Ransomware Protection docs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/whats-new.html">
         Release notes
@@ -577,7 +567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-12 13:44:39 +0000">05/12/2022</time>
+    <time datetime="2022-05-31 14:39:52 +0000">05/31/2022</time>
     
   
 
@@ -598,7 +588,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.</p>
+<p>Use the Cloud Manager Ransomware Protection Dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_ransomware_dashboard.png" alt="A screenshot of the Ransomware Protection dashboard."></span></p>
@@ -684,6 +674,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Snapshots not configured for all volumes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Some volumes in the working environment aren&#8217;t being protected by creating volume snapshots.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click the link and you are redirected to the <a href="#status-of-ontap-systems-hardening">Harden your ONTAP environment panel</a> and to the working environment with the issue. There you can investigate how best to fix the issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File operations auditing is not turned on for all SVMs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Some storage VMs in the working environment don&#8217;t have file system auditing enabled. It is recommended so you can keep track of users actions on your files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the link and you are redirected to the <a href="#status-of-ontap-systems-hardening">Harden your ONTAP environment panel</a> and to the working environment with the issue. There you can investigate whether you need to enable NAS auditing on your SVMs.</p></td>
 </tr>
 </tbody>
 </table>
@@ -817,6 +812,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">The percentage of volumes that have on-box anti-ransomware activated. Valid for on-prem ONTAP systems only.<br>
 A green status icon indicates &gt; 85% of volumes are enabled. Yellow indicates 40-85% are enabled. Red indicates &lt; 40% are enabled.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure" target="_blank" rel="noopener">See how to enable anti-ransomware on your volumes</a> using System Manager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAS Auditing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of storage VMs that have file system auditing enabled.<br>
+A green status icon indicates &gt; 85% of SVMs have NAS file system auditing enabled. Yellow indicates 40-85% are enabled. Red indicates &lt; 40% are enabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.netapp.com/us-en/ontap/nas-audit/auditing-events-concept.html" target="_blank" rel="noopener">See how to enable NAS auditing on SVMs</a> using the CLI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP Version</p></td>
@@ -1039,4 +1040,5 @@ A green status icon indicates &gt; 85% of volumes have snapshots enabled. Yellow
     </script>
     <script src='/us-en/cloud-manager-ransomware/js/www-ntap.js'></script>
     <script src='/us-en/cloud-manager-ransomware/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-ransomware/js/sidebar.js'></script>
   </body></html>

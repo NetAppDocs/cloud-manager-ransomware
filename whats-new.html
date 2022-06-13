@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-ransomware/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/whats-new.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-ransomware/whats-new.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-ransomware/whats-new.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-ransomware/whats-new.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-ransomware/whats-new.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -360,8 +352,6 @@
         
         <a target="_blank" href="/us-en/cloud-manager-ransomware/pdfs/fullsite-sidebar/Ransomware_Protection_documentation.pdf" >
           <img src="/us-en/cloud-manager-ransomware/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
-
-
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -496,10 +486,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-ransomware/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/index.html">
         Ransomware Protection docs
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-ransomware/whats-new.html">
         Release notes
@@ -577,7 +567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-12 12:24:57 +0000">05/12/2022</time>
+    <time datetime="2022-06-13 12:34:53 +0000">06/13/2022</time>
     
   
 
@@ -603,12 +593,35 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="12-june-2022">12 June 2022</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="nas-file-system-auditing-status-is-now-tracked-for-your-ontap-storage-vms">NAS file system auditing status is now tracked for your ONTAP storage VMs</h3>
+<div class="paragraph">
+<p>An alert is added to the <em>Cyber Resilience Map</em> if less than 40% of the storage VMs in the working environment have file system auditing enabled. You can view the exact number of SVMs that are not tracking and logging SMB and NFS events into an audit log in the <em>Harden your ONTAP environment</em> panel. Then you can decide whether to enable auditing on those SVMs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="alerts-are-now-displayed-when-on-box-anti-ransomware-is-not-active-for-your-volumes">Alerts are now displayed when on-box anti-ransomware is not active for your volumes</h3>
+<div class="paragraph">
+<p>This information was being reported for on-prem ONTAP systems in the <em>Harden your ONTAP environments</em> panel previously, but now an alert is reported in the <em>Cyber Resilience Map</em> when the on-box anti-ransomware feature is turned on in less than 40% of volumes so you can view this information in the Dashboard.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fsx-for-ontap-systems-are-now-tracked-for-enabling-volume-snapshots">FSx for ONTAP systems are now tracked for enabling volume snapshots</h3>
+<div class="paragraph">
+<p>The <em>Harden your ONTAP environments</em> panel now provides the status of Snapshot copies for volumes on your FSx for ONTAP systems. When less than 40% of the volumes are being protected by snapshots, you will also get an alert in the <em>Cyber Resilience Map</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="11-may-2022">11 May 2022</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="new-panel-to-track-the-security-hardening-of-your-ontap-environments">New panel to track the security hardening of your ONTAP environments.</h3>
 <div class="paragraph">
-<p>A new panel "Harden your ONTAP environments" provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
+<p>A new panel <em>Harden your ONTAP environments</em> provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
 </div>
 <div class="paragraph">
 <p>You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-ontap-systems-hardening">Go here for details</a>.</p>
@@ -617,7 +630,7 @@
 <div class="sect2">
 <h3 id="new-panel-to-show-how-different-categories-of-data-are-being-protected-using-cloud-backup">New panel to show how different categories of data are being protected using Cloud Backup.</h3>
 <div class="paragraph">
-<p>This new "Backup Status" panel shows how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in an environment are backed up by Cloud Backup. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#backup-status-of-your-critical-business-data">Go here for details</a>.</p>
+<p>This new <em>Backup Status</em> panel shows how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in an environment are backed up by Cloud Backup. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#backup-status-of-your-critical-business-data">Go here for details</a>.</p>
 </div>
 </div>
 </div>
@@ -628,7 +641,7 @@
 <div class="sect2">
 <h3 id="new-panel-to-track-the-permissions-status-of-your-business-critical-data">New panel to track the permissions status of your business critical data</h3>
 <div class="paragraph">
-<p>A new panel "Business critical data permissions analysis" shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data">Go here for details</a>.</p>
+<p>A new panel <em>Business critical data permissions analysis</em> shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data">Go here for details</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -648,7 +661,7 @@
 <p>The new Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/concept-ransomware-protection.html">Learn more about this new service</a>.</p>
+<p><a href="concept-ransomware-protection.html">Learn more about this new service</a>.</p>
 </div>
 </div>
 </div>
@@ -799,4 +812,5 @@
     </script>
     <script src='/us-en/cloud-manager-ransomware/js/www-ntap.js'></script>
     <script src='/us-en/cloud-manager-ransomware/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-ransomware/js/sidebar.js'></script>
   </body></html>
